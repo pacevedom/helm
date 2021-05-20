@@ -82,6 +82,10 @@ func TestKindSorter(t *testing.T) {
 			Head: &SimpleHead{Kind: "LimitRange"},
 		},
 		{
+			Name: "6",
+			Head: &SimpleHead{Kind: "MutatingWebhookConfiguration"},
+		},
+		{
 			Name: "a",
 			Head: &SimpleHead{Kind: "Namespace"},
 		},
@@ -158,6 +162,10 @@ func TestKindSorter(t *testing.T) {
 			Head: &SimpleHead{Kind: "StorageClass"},
 		},
 		{
+			Name: "5",
+			Head: &SimpleHead{Kind: "ValidatingWebhookConfiguration"},
+		},
+		{
 			Name: "w",
 			Head: &SimpleHead{Kind: "APIService"},
 		},
@@ -172,8 +180,8 @@ func TestKindSorter(t *testing.T) {
 		order       KindSortOrder
 		expected    string
 	}{
-		{"install", InstallOrder, "aAbcC3deEf1gh2iIjJkKlLmnopqrxstuvw!"},
-		{"uninstall", UninstallOrder, "wvmutsxrqponLlKkJjIi2hg1fEed3CcbAa!"},
+		{"install", InstallOrder, "aAbcC3deEf1gh256iIjJkKlLmnopqrxstuvw!"},
+		{"uninstall", UninstallOrder, "wvmutsxrqponLlKkJjIi265hg1fEed3CcbAa!"},
 	} {
 		var buf bytes.Buffer
 		t.Run(test.description, func(t *testing.T) {
